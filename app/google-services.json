@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1043376201589",
+    "firebase_url": "https://mybooklist-ce238.firebaseio.com",
+    "project_id": "mybooklist-ce238",
+    "storage_bucket": "mybooklist-ce238.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043376201589:android:110183b1d657d740",
+        "android_client_info": {
+          "package_name": "com.davidhernandez.mybooklist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043376201589-08h4t1lro4fkdbvnn0uaeaj969u5abu7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.davidhernandez.mybooklist",
+            "certificate_hash": "f04671bd91e37e68e727b5fdc79037a188639dc3"
+          }
+        },
+        {
+          "client_id": "1043376201589-fdkvrolppri621iufpiqajh4oi57i5gm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcXJ9SMBKYLbuqWbgTqZp4qBEOJPfYYzE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043376201589-fdkvrolppri621iufpiqajh4oi57i5gm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

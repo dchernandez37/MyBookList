@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.davidhernandez.mybooklist.AddBookActivityFragment"
+    tools:showIn="@layout/activity_add_book"
+    android:orientation="vertical"
+    android:background="#19beb788">
+
+    <EditText
+        android:id="@+id/titleEditText"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:background="#b5beb788"
+        android:hint="@string/enter_book_title"
+        android:inputType="text"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textColor="#263238"
+        android:textColorHint="#a86f828c"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/authorEditText"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#b5beb788"
+        android:hint="@string/enter_author_name"
+        android:inputType="text"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textColor="#263238"
+        android:textColorHint="#a86f828c"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/currEditText"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#b5beb788"
+        android:hint="@string/enter_current_page"
+        android:inputType="number"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textColor="#263238"
+        android:textColorHint="#a86f828c"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/pagesEditText"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#b5beb788"
+        android:hint="@string/enter_total_number_of_pages"
+        android:inputType="number"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textColor="#263238"
+        android:textColorHint="#a86f828c"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/isbnEditText"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#b5beb788"
+        android:hint="@string/enter_the_isbn"
+        android:inputType="number"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textColor="#263238"
+        android:textColorHint="#a86f828c"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/AddBookButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="#cc556c63"
+        android:text="Add Book"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"/>
+
+</LinearLayout>
+
