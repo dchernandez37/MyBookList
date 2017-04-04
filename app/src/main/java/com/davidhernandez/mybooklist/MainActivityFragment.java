@@ -14,6 +14,7 @@ import android.widget.ListView;
 
 import com.davidhernandez.mybooklist.domain.Book;
 import com.davidhernandez.mybooklist.services.BookSVC;
+import com.davidhernandez.mybooklist.services.BookSvcVolleyImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,13 +38,13 @@ public class MainActivityFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         // initialize Volley service
-//        BookSvcVolleyImpl bookSvcVolley = new BookSvcVolleyImpl(rootView);
-//        mBooks = bookSvcVolley.retrieveAllBooks();
+        BookSvcVolleyImpl bookSvcVolley = new BookSvcVolleyImpl(rootView);
+        mBooks = bookSvcVolley.retrieveAllBooks();
 
-        BookSVC bookSVC = new BookSVC(rootView);
-        Intent intent = BookSVC.newIntent(getContext());
-        getActivity().startService(intent);
-        mBooks = bookSVC.getBooks();
+//        BookSVC bookSVC = new BookSVC(rootView);
+//        Intent intent = BookSVC.newIntent(getContext());
+//        getActivity().startService(intent);
+//        mBooks = bookSVC.getBooks();
 
 
         // initialize ListView
@@ -69,6 +70,7 @@ public class MainActivityFragment extends Fragment {
                 bookDetailView.putExtra("currPage", mBooks.get(position).getCurrPage());
                 bookDetailView.putExtra("numPages", mBooks.get(position).getPages());
                 bookDetailView.putExtra("isbn",     mBooks.get(position).getISBN());
+                bookDetailView.putExtra("id",       mBooks.get(position).getID());
 
                 startActivity(bookDetailView);
             }
