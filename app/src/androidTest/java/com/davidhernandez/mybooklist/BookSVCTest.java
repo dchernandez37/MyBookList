@@ -19,5 +19,6 @@ public class BookSVCTest extends ApplicationTestCase<Application> {
         BookSVC bookSVC = new BookSVC(null);
 
         bookSVC.addBook(new Book("C++ How To Program", "Paul Deitel", "20", "800", "978-0-13-266236-9"));
+
     }
 }
