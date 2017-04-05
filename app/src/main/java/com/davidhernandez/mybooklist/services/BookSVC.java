@@ -26,7 +26,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 
@@ -119,6 +121,55 @@ public class BookSVC extends Service {
     }
 
     public void addBook(Book book) {
+        JSONObject jsonBook = new JSONObject();
+
+        try {
+            // package book as json
+            jsonBook.accumulate("title", book.getTitle());
+            jsonBook.accumulate("author", book.getAuthor());
+            jsonBook.accumulate("currpage", book.getCurrPage());
+            jsonBook.accumulate("pages", book.getPages());
+            jsonBook.accumulate("isbn", book.getISBN());
+            jsonBook.accumulate("id", book.getID());
+
+            System.out.println("Trying to add a new book: " + book.getTitle());
+
+            JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, FIREBASE_URL, jsonBook,
+                    new Response.Listener<JSONObject>() {
+
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            try {
+                                System.out.printf("New Book: %s", response.getString("title"));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }, new Response.ErrorListener() {
+
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    error.printStackTrace();
+                }
+            }) {
+                @Override
+                protected Map<String, String> getParams() {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("title", "some book");
+                    params.put("author", "name");
+                    params.put("currpage", "1");
+                    params.put("pages", "300");
+                    params.put("isbn", "123456789");
+                    params.put("id", "some id");
+                    return params;
+                }
+            };
+
+            Volley.newRequestQueue(mView.getContext()).add(postRequest);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         mBooks.add(book);
     }
 
