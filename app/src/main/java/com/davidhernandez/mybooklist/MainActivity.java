@@ -1,5 +1,6 @@
 package com.davidhernandez.mybooklist;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -21,14 +22,25 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.davidhernandez.mybooklist.services.BookSVC;
+
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
+    private static final String FIREBASE_URL = "https://mybooklist-63e8c.firebaseio.com/books.json";   // new firebase
 
     // Data members for drawer
     private String[] mDrawerListViewItems;
     private ListView mDrawerListView;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mActionBarDrawerToggle;
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        Intent intent = new Intent(this, BookSVC.class);
+//
+//        bindService(intent, BookSVC., Context.BIND_AUTO_CREATE);
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

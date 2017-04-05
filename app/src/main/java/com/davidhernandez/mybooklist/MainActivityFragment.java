@@ -1,5 +1,6 @@
 package com.davidhernandez.mybooklist;
 
+import android.content.Context;
 import android.content.Intent;
 
 import android.support.v4.app.Fragment;
@@ -33,18 +34,27 @@ public class MainActivityFragment extends Fragment {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        Intent intent = BookSVC.newIntent(this.getContext());
+        getContext().startService(intent);
+//        getContext().bindService(intent, this.get, Context.BIND_AUTO_CREATE);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // store inflated view in rootView
         final View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         // initialize Volley service
-        BookSvcVolleyImpl bookSvcVolley = new BookSvcVolleyImpl(rootView);
-        mBooks = bookSvcVolley.retrieveAllBooks();
+//        BookSvcVolleyImpl bookSvcVolley = new BookSvcVolleyImpl(rootView);
+//        mBooks = bookSvcVolley.retrieveAllBooks();
 
-//        BookSVC bookSVC = new BookSVC(rootView);
-//        Intent intent = BookSVC.newIntent(getContext());
-//        getActivity().startService(intent);
-//        mBooks = bookSVC.getBooks();
+        BookSVC bookSVC = new BookSVC(rootView);
+        mBooks = bookSVC.getBooks();
+
+//        if(bound)
+//            mBooks = mBookSVC.getBooks();
 
 
         // initialize ListView

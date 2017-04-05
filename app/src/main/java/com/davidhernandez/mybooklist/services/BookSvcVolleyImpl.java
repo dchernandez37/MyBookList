@@ -7,9 +7,7 @@ import android.widget.ListView;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.davidhernandez.mybooklist.R;
 import com.davidhernandez.mybooklist.domain.Book;
@@ -24,7 +22,6 @@ import java.util.List;
 import java.util.Map;
 
 public class BookSvcVolleyImpl implements IBookSvc {
-//    final String mURL = "https://mybooklist-ce238.firebaseio.com/.json";
 private static final String mURL = "https://mybooklist-63e8c.firebaseio.com/books.json";   // new firebase
     private List<Book> mBooks;
     private List<String> mTitles;
